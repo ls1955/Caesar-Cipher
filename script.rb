@@ -12,10 +12,10 @@ def caesar_cipher(string, shift_factor)
 
     result = string.split("").map do |letter|
         if lowercase_letter?(letter)
-            index = letter.ord - 97
+            index = (letter.ord - 97) % 26
             letter = lowercase_shifted_letters[index]
         elsif uppercase_letter?(letter)
-            index = letter.ord - 65
+            index = (letter.ord - 65) % 26
             letter = uppercase_shifted_letters[index]
         else
             letter
